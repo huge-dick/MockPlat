@@ -1,0 +1,7 @@
+[
+    {
+    "context":"/",
+    "include":"moco/moco_file/*.json"
+  }
+
+]

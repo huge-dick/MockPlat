@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mock测试平台</title>
+     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <navbar>
+        <div class="navbar">
+          <div >
+
+            <nav class="navbar  navbar-inverse navbar-fixed-top">
+              <div >
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">功能导航</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                      <li id='configbtn'><a class="btn" href="/http">HTTP配置</a></li>
+                      <li><a href="#" disabled="true">websocket配置</a></li>
+                    <li><a href="https://nac.kucoin.com:1063/?p=1610">帮助文档</a></li>
+                    <li><a class="btn" href="/restart">重启</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+          </div>
+        </div>
+
+    </navbar>
+
+{#    <p>当新增了http mock接口定义或http mock server异常时请重启</p>#}
+    <label>HTTP模拟服务器：</label>
+    <div class="row">
+            <div class="col-md-4" style="margin-left:0px"><input type="text" class="form-control" id="port"  placeholder="请输入端口,默认9999"></div>
+            <div class="col-md-4"><button class="btn btn-primary" id="restartBtn" style="margin-left:20px" title="重启http mock server">重启</button></div>
+    </div>
+
+    <script>
+        $(function() {
+            $('#restartBtn').click(function () {
+
+                 httpport=$("#port").val();
+                $.ajax({
+                  method:"post",
+                  url:'/moco/restart',
+                  data:{
+                      port:httpport
+                  },
+                  dataType : "json",
+                  async:true,
+                  success:function (data) {
+                     alert(data.message)
+
+                  }
+            });
+
+            })
+
+        })
+    </script>
+
+</body>
+</html>

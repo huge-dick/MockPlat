@@ -1,0 +1,5 @@
+mock.zip
+venc
+.idea
+moco/moco_file/*.json
+!test.json
