@@ -1,6 +1,7 @@
 from flask_script import Manager
 from app import app
 
+'''用于flask app的启动'''
 manager = Manager(app) # 注册一个manager实例，自带了runserver命令
 
 @manager.command

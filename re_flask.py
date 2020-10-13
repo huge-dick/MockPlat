@@ -6,6 +6,9 @@ import datetime
 from flask import Flask as _Flask
 from flask.json import JSONEncoder as _JSONEncoder
 
+'''将decimal等数据类型序列化'''
+
+
 class JSONEncoder(_JSONEncoder):
     def default(self, o):
         import decimal
