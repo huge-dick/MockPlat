@@ -1,5 +1,8 @@
-mock.zip
+*.zip
+*.tar
 venc
 .idea
 moco/moco_file/*.json
 !test.json
+__pycache__
+temp.py
