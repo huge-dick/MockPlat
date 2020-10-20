@@ -4,9 +4,11 @@
     <br>
     <div>
       <div>
-        <div>
-          <Input v-model="email" placeholder="请输入邮箱" style="width: auto" />
-          <Button type="primary" @click="search">搜索</Button>
+        <div class="filter">
+          <div>
+            <Input v-model="email" placeholder="请输入邮箱" style="width: auto" />
+            <Button type="primary" @click="search">搜索</Button>
+          </div>
            <h4 class="gcode-style">google验证码: {{googleCode}} </h4>
         </div>
 
@@ -166,6 +168,12 @@ export default {
 <style scoped>
   .page-style{
     text-align: right;
+  }
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
   }
   .gcode-style{
     text-align: right;

@@ -24,13 +24,13 @@ Pool-X 测试工具平台
 |   接口测试| Pool-X接口自动化的调度 |TODO|
 
 ## 安装
-#### flask应用 安装
+#### flask应用 安装启动
 ```
 安装：pip install -r requirements.txt
 启动：python3 manage.py
 
 ```
-####前端工程安装
+####前端工程安装启动
 ```
 见client目录下README
 ```

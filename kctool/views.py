@@ -131,9 +131,10 @@ def get_user_list():
     '''查询通过本程序生成的用户列表'''
     try:
         email=request.args['email']
-        email=encript_account(email)
     except:
         email=''
+    if email!='':
+        email = encript_account(email)
     try:
         page=request.args['page']
     except:
