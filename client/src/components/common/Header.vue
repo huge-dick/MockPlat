@@ -15,6 +15,7 @@
                 <MenuItem name="2-1" to="/testusers">用户列表</MenuItem>
                 <MenuItem name="2-2" to="/createuser">生成用户</MenuItem>
                 <MenuItem name="2-3" to="/deposite">充值</MenuItem>
+              <MenuItem name="2-3-1" to="/others">其他功能列表</MenuItem>
             </MenuGroup>
 
             <MenuGroup title="数据检查工具">

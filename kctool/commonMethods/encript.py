@@ -38,8 +38,8 @@ def descrypt_account(data):
 
 
 if __name__ == '__main__':
-    account='17364788888'
+    account='cool.liang@kupogroup.com'
     a=encript_account(account)
     print(a)
-    print(descrypt_account('QE11vwtLrG+ZyzOuuHrrT+Dtygpxb/zK'))
+    print(descrypt_account('DEKpvWuoLSnPscBQI1ReRGfcpVB6Ut8kgb5tZovMdlY='))
 

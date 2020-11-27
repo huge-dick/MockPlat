@@ -8,3 +8,4 @@ kctool=Blueprint('kctool', __name__, static_folder='static_kctool',static_url_pa
 from .views import *
 from .accunt_views import *
 from .income_check_views import *
+from .currency_views import *

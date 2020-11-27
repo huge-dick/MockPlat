@@ -6,6 +6,7 @@ import genUser from '../components/genUser'
 import Deposite from '../components/Deposite'
 import IncomeCheck from '../components/IncomeCheck'
 import SoftIncomeCheck from '../components/SoftIncomeCheck'
+import OtherFunction from '../components/OtherFuction'
 
 Vue.use(Router);
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/soft_income_check',
       name: 'SoftIncomeCheck',
       component: SoftIncomeCheck
+    },
+    {
+      path:'/others',
+      name:'OtherFunction',
+      component: OtherFunction
     }
   ],
   mode: 'history',

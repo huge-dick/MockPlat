@@ -6,8 +6,9 @@ import datetime
 import requests
 
 from kctool.commonMethods.eureka import Eureka
+from kctool.commonMethods.service_enum import ServiceEnum
 
-ACCOUNT_HOST=Eureka().get_service_ip('ACCOUNT')
+ACCOUNT_HOST=Eureka().get_service_ip(ServiceEnum.ACCOUNT.value)
 admin = "admin"
 password = "123"
 

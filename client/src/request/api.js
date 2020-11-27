@@ -28,3 +28,5 @@ export const apiSoftLowerCheck=p => get('kctool/soft/lower/check',p);
 
 export const apiGoogleCode=p => get('kctool/google_code',p);
 
+export const apiClearCurrencyCache=p => get('kctool/currency/clear',p);
+
