@@ -5,7 +5,7 @@
 import datetime
 import re
 
-from kctool.commonMethods.account import eazy_receipt
+from kctool.commonMethods.account import AccountApi
 from kctool.commonMethods.google_code import getGoogleCheckCode
 
 '''给用户充值'''
@@ -102,7 +102,8 @@ def gen_user():
         }
         '''生成帐户的同时充值'''
         try:
-            eazy_receipt(userid)
+            accountApi=AccountApi()
+            accountApi.eazy_receipt(userid)
         except:
             pass
         return jsonify(json)

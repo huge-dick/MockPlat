@@ -4,9 +4,10 @@
 from flask import jsonify
 
 from kctool import kctool
-from kctool.commonMethods.currency_common import clear_cache
+from kctool.commonMethods.currency_common import CurrencyApi
 
 
 @kctool.route('/currency/clear')
 def currency_clear_cache():
-    return jsonify(clear_cache())
+    currencyApi=CurrencyApi()
+    return jsonify(currencyApi.clear_cache())
