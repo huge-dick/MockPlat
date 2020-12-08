@@ -10,3 +10,5 @@ from enum import Enum
 class ServiceEnum(Enum):
     CURRENCY='CURRENCY'
     ACCOUNT='ACCOUNT'
+    ACCOUNT_FRONT='ACCOUNT-FRONT'
+    PX_STAKING='POOL-STAKING'

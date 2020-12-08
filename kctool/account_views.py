@@ -6,7 +6,7 @@
 
 from flask import request, jsonify
 
-from kctool import AccountApi
+from kctool.commonMethods.account_common import AccountApi, AccountFrontApi
 from . import kctool
 
 
@@ -20,6 +20,14 @@ def receipt():
             bizFrom="PAYMENT", bizType="DEPOSIT", context="test", domainId="kucoin", fee="0", feeTag="DEFAULT",
             remark="test", subBizType="")
     return jsonify(r)
+
+
+@kctool.route('/sharding-account',methods=['GET'])
+def sharding_account():
+    ownerId=request.args['userId']
+    accountFrontApi=AccountFrontApi()
+    rs=accountFrontApi.sharding_account(ownerId)
+    return jsonify(rs)
 
 
 

@@ -5,7 +5,8 @@ from flask import Blueprint
 
 kctool=Blueprint('kctool', __name__, static_folder='static_kctool',static_url_path='/lib')
 
-from .views import *
-from .accunt_views import *
+from .ucenter_views import *
+from .account_views import *
 from .income_check_views import *
 from .currency_views import *
+from .staking_views import *
