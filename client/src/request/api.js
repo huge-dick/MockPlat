@@ -30,3 +30,13 @@ export const apiGoogleCode=p => get('kctool/google_code',p);
 
 export const apiClearCurrencyCache=p => get('kctool/currency/clear',p);
 
+export const apiClearPoolxCache=p => get('kctool/px-redis/clear',p);
+
+export const apiShardingPoolTable=p => get('kctool/px_sharding_table',p);
+
+export const apiShardingAccount=p => get('kctool/sharding-account',p);
+
+
+
+
+

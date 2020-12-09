@@ -6,7 +6,8 @@ import genUser from '../components/genUser'
 import Deposite from '../components/Deposite'
 import IncomeCheck from '../components/IncomeCheck'
 import SoftIncomeCheck from '../components/SoftIncomeCheck'
-import OtherFunction from '../components/OtherFuction'
+import Sharding from '../components/Sharding'
+import ClearCache from '../components/ClearCache'
 
 Vue.use(Router);
 
@@ -47,9 +48,14 @@ export default new Router({
       component: SoftIncomeCheck
     },
     {
-      path:'/others',
-      name:'OtherFunction',
-      component: OtherFunction
+      path:'/clearcache',
+      name:'ClearCache',
+      component: ClearCache
+    },
+    {
+      path:'/sharding',
+      name:'Sharding',
+      component: Sharding
     }
   ],
   mode: 'history',

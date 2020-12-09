@@ -15,7 +15,8 @@
                 <MenuItem name="2-1" to="/testusers">用户列表</MenuItem>
                 <MenuItem name="2-2" to="/createuser">生成用户</MenuItem>
                 <MenuItem name="2-3" to="/deposite">充值</MenuItem>
-              <MenuItem name="2-3-1" to="/others">其他功能列表</MenuItem>
+              <MenuItem name="2-3-1" to="/clearcache">清除redis缓存</MenuItem>
+              <MenuItem name="2-3-2" to="/sharding">分库分表查询</MenuItem>
             </MenuGroup>
 
             <MenuGroup title="数据检查工具">
@@ -30,7 +31,7 @@
                 <Icon type="ios-stats" />
                 Mock平台
             </template>
-            <MenuGroup title="">
+            <MenuGroup title="moco">
                 <MenuItem name="3-1" to="http://10.2.1.73:5000" target="_blank" >moco数据文件配置</MenuItem>
                 <MenuItem name="3-2" to="https://nac.kucoin.com:1063/?p=1610" target="_blank">使用手册</MenuItem>
                 <MenuItem name="3-3" to="http://10.2.1.73:5000/restart" target="_blank">重启Mock Server</MenuItem>
