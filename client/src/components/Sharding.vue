@@ -7,7 +7,7 @@
         <Input v-model="userIdkc" placeholder="请输入用户userId" style="width: auto" />
           <Button type="primary" @click="shardingAccount">查询</Button>
         <br>
-        <div class="notice_font" v-if="accountDbIndex!=''" >
+        <div class="notice_font" v-if="accountDbIndex!==''" >
           用户账务余额保存在<span class="light_font">{{accountDbIndex}}</span>库<span class="light_font">{{accountTableIndex}}</span>表
         </div>
       </div>
@@ -20,7 +20,7 @@
         <Input v-model="userIdpx" placeholder="请输入用户userId" style="width: auto" />
           <Button type="primary" @click="shardingPool">查询</Button>
         <br>
-        <div class="notice_font" v-if="poolTableIndex!=''" >
+        <div class="notice_font" v-if="poolTableIndex!==''" >
           用户数据保存在<span class="light_font">{{poolTableIndex}}</span>表
         </div>
 
