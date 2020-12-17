@@ -49,7 +49,7 @@ def check_result_json(code,exp_currency_income=1,acc_currency_income=1,exp_pol_i
             "result": "wrong",
             "msg": msg
         }
-        return data
+        return jsonify(data)
 
 '''质押期间/活期计算收益及收益检查'''
 def cal_and_query_income(date, user_id, product_id, lock_id,type=None):
@@ -63,6 +63,8 @@ def cal_and_query_income(date, user_id, product_id, lock_id,type=None):
     expected_return = to_float(prodinfo['expected_return'])
     makeup_ratio = to_float(prodinfo['makeup_ratio'])
     if_staking = to_float(snapshot_result['if_staking'])
+    if total_output==0:
+        return check_result_json(code=1003, msg='总算力为0，无法计算，请检查是否该日期锁仓快照未生成')
     if type =='SUBSCRIBE':
         if if_staking == 0:
             exp_pol_income = 0
@@ -92,7 +94,7 @@ def check_total_pol_income():
     date=request.args['date']
     expect_total=get_daily_amount_by_date(date)*DISTRIBUTE_COEFFICIENT
     acc_total=query_total_pol_income(date)
-    if (abs(float(acc_total)-expect_total)<0.0001):
+    if (abs(to_float(acc_total)-expect_total)<0.0001):
         rs="success"
     else:
         rs="wrong"
@@ -256,12 +258,6 @@ def check_soft_income():
     return jsonify(data)
 
 
-
-# @kctool.route('/product', methods=['GET'])
-# def get_product_info():
-#     product_id=request.args['productId']
-#     result=query_product_info(product_id)
-#     return jsonify(result)
 
 
 
