@@ -36,6 +36,10 @@ export const apiShardingPoolTable=p => get('kctool/px_sharding_table',p);
 
 export const apiShardingAccount=p => get('kctool/sharding-account',p);
 
+export const apiGetNftTokens=p => get('/kctool/currency/nft/tokens',p)
+
+export const apiNftReceipt=p => post('/kctool/account/nft-receipt',p)
+
 
 
 

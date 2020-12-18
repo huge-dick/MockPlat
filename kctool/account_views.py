@@ -6,7 +6,7 @@
 
 from flask import request, jsonify
 
-from kctool.commonMethods.account_common import AccountApi, AccountFrontApi
+from kctool.commonMethods.account_common import AccountApi, AccountFrontApi, PoolAccountApi
 from . import kctool
 
 
@@ -27,6 +27,16 @@ def sharding_account():
     ownerId=request.args['userId']
     accountFrontApi=AccountFrontApi()
     rs=accountFrontApi.sharding_account(ownerId)
+    return jsonify(rs)
+
+
+@kctool.route('/account/nft-receipt', methods=['POST'])
+def nft_receipt():
+    userId = request.form['userId']
+    currency = request.form['currency']
+    tokenId = request.form['tokenId']
+    poolAccountApi=PoolAccountApi()
+    rs=poolAccountApi.receipt(userId,currency,tokenId)
     return jsonify(rs)
 
 

@@ -74,11 +74,36 @@ class AccountFrontApi():
         rs = requests.get(url=url, params=data)
         return rs.json()
 
+class PoolAccountApi():
+    def __init__(self):
+        self._Host= Eureka().get_service_ip(ServiceEnum.PX_ACCOUNT.value)
 
+    def receipt(self,userId,currency,tokenId):
+        path='/inner/nft/receipt'
+        bizNo = round(datetime.datetime.now().timestamp() * 1000000)
+        data={
+              "biz_from": "string",
+              "biz_type": "string",
+              "biz_no": "bizNo",
+              "user_id": userId,
+              "currency": currency,
+              "token_id": tokenId,
+              "amount": 1,
+              "context": {},
+              "fee": "0",
+              "fee_currency": currency,
+              "remark": "test"
+            }
+        url=url_comb(self._Host, path=path)
+        rs=requests.post(url=url,json=data)
+        return rs.json()
 
 if __name__ == '__main__':
-    accountApi=AccountApi()
-    accountApi.eazy_receipt('insertdirec1597061619285')
-    accountFrontApi = AccountFrontApi()
-    rs = accountFrontApi.sharding_account('insertdirec1597061619285')
+    # accountApi=AccountApi()
+    # accountApi.eazy_receipt('insertdirec1597061619285')
+    # accountFrontApi = AccountFrontApi()
+    # rs = accountFrontApi.sharding_account('insertdirec1597061619285')
+    # print(rs)
+    poolAccountApi=PoolAccountApi()
+    rs=poolAccountApi.receipt(userId='insertdirec1597053032747',currency='VELO_X',tokenId='2')
     print(rs)

@@ -11,11 +11,12 @@ PASSWORD = 'test_kucoin.123.com'
 
 UCENTER_DB_URI = "mysql+pymysql://{username}:{password}@{host}:{port}/{db}?charset=utf8".format(username=USERNAME,password=PASSWORD, host=HOST,port=PORT, db=DATABASE)
 STAKING_DB_URI="mysql+pymysql://{username}:{password}@{host}:{port}/{db}?charset=utf8".format(username=USERNAME,password=PASSWORD, host=HOST,port=PORT, db='px_staking')
-
+PX_CURRENCY_DB_URI = "mysql+pymysql://{username}:{password}@{host}:{port}/{db}?charset=utf8".format(username=USERNAME,password=PASSWORD, host=HOST,port=PORT, db='px_currency')
 
 SQLALCHEMY_BINDS = {
     'ucenter': UCENTER_DB_URI,
-    'px_staking': STAKING_DB_URI
+    'px_staking': STAKING_DB_URI,
+    'px_currency':PX_CURRENCY_DB_URI
 }
 
 SQLALCHEMY_DATABASE_URI = UCENTER_DB_URI #默认的数据库引擎
