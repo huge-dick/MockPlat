@@ -70,3 +70,5 @@ def query_product_info(product_id):
 def query_soft_staking_income(incomeDate,userId,currency):
     return db.session.query(func.sum(SoftStakingIncome.amount)).filter(and_(SoftStakingIncome.income_date==incomeDate,SoftStakingIncome.user_id==userId,SoftStakingIncome.currency==currency)).scalar()
 
+if __name__ == '__main__':
+    print(get_daily_amount_by_date('2020-12-15'))
