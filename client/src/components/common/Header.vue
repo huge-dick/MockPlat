@@ -32,9 +32,9 @@
                 Mock平台
             </template>
             <MenuGroup title="moco">
-                <MenuItem name="3-1" to="http://10.2.1.73:5000" target="_blank" >moco数据文件配置</MenuItem>
+                <MenuItem name="3-1" to="http://10.2.1.32:5000" target="_blank" >moco数据文件配置</MenuItem>
                 <MenuItem name="3-2" to="https://nac.kucoin.com:1063/?p=1610" target="_blank">使用手册</MenuItem>
-                <MenuItem name="3-3" to="http://10.2.1.73:5000/restart" target="_blank">重启Mock Server</MenuItem>
+                <MenuItem name="3-3" to="http://10.2.1.32:5000/restart" target="_blank">重启Mock Server</MenuItem>
             </MenuGroup>
 
         </Submenu>
