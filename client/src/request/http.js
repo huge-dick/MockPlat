@@ -8,7 +8,7 @@ else if (process.env.NODE_ENV == 'debug') {
     axios.defaults.baseURL = 'https://www.ceshi.com';
 }
 else if (process.env.NODE_ENV == 'production') {
-  axios.defaults.baseURL = 'http://10.2.1.73:5000';
+  axios.defaults.baseURL = 'http://10.2.1.32:5000';
 }
 
 axios.defaults.timeout = 10000;
