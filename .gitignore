@@ -2,6 +2,7 @@
 *.tar
 venc
 .idea
+.DS_Store
 moco/moco_file/*.json
 !test.json
 __pycache__

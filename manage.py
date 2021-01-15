@@ -1,16 +1,12 @@
 from flask_script import Manager
+
 from app import app
+from exts import scheduler
 
 '''用于flask app的启动'''
-manager = Manager(app) # 注册一个manager实例，自带了runserver命令
-
-@manager.command
-def hello():
-    """这只是一个测试命令"""
-    print("OK")
-    return "Hello World!"
-
+manager = Manager(app)
 
 
 if __name__ == '__main__':
+    scheduler.start()
     app.run(host='0.0.0.0', port=5000, threaded=True)

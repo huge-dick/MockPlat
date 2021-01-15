@@ -10,3 +10,4 @@ from .account_views import *
 from .income_check_views import *
 from .currency_views import *
 from .staking_views import *
+from .scheduler_view import *
