@@ -19,7 +19,7 @@ class SchedulerConfig():
             'func': 'scheduler:soft_check_income',
             'args': None,
             'trigger': 'cron',  # cron表示定时任务
-            'hour': 17,
+            'hour': 18,
             'minute': 0,
             'second':0
         },
@@ -29,7 +29,7 @@ class SchedulerConfig():
             'func': 'scheduler:staking_check_income',
             'args': None,
             'trigger': 'cron',  # cron表示定时任务
-            'hour': 17,
+            'hour': 18,
             'minute': 0,
             'second': 0
         }
