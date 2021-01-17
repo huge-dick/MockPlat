@@ -40,7 +40,8 @@ export const apiGetNftTokens=p => get('/kctool/currency/nft/tokens',p)
 
 export const apiNftReceipt=p => post('/kctool/account/nft-receipt',p)
 
+export const apiTaskPause=p => get('/kctool/scheduler/pause',p)
 
+export const apiTaskResume=p => get('/kctool/scheduler/resume',p)
 
-
-
+export const apiGetTask=() => get('/kctool/scheduler/gettask')

@@ -20,6 +20,7 @@
             </MenuGroup>
 
             <MenuGroup title="数据检查工具">
+                <MenuItem name="2-7" to="task_list">定时任务列表</MenuItem>
                 <MenuItem name="2-4" to="incomecheck">一键锁仓收益检测</MenuItem>
                 <MenuItem name="2-5" to="soft_income_check">持仓收益检测</MenuItem>
                 <MenuItem name="2-6">lockDrop收益检测</MenuItem>
@@ -38,7 +39,16 @@
             </MenuGroup>
 
         </Submenu>
-        <MenuItem name="4">
+        <Submenu name="4">
+            <template slot="title">
+                <Icon type="ios-stats" />
+                接口测试
+            </template>
+            <MenuGroup title="接口测试">
+                <MenuItem name="4-1" to="/interfaceTest">接口测试</MenuItem>
+            </MenuGroup>
+        </Submenu>
+        <MenuItem name="5">
             更多
           <Icon type="ios-arrow-down" />
         </MenuItem>

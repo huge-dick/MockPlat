@@ -3,16 +3,19 @@
 # @Time : 2021/1/12 下午3:20
 import random
 
-from flask import request
+from flask import request, jsonify
 
 from exts import scheduler
 from kctool import kctool
 
+state_data = {}
 
 @kctool.route('/scheduler/pause')
 def pausetask():  # 暂停
     id = request.args['id']
     scheduler.pause_job(id)
+    state_data[id] = '0'
+    print(state_data)
     return "Success!"
 
 
@@ -20,6 +23,8 @@ def pausetask():  # 暂停
 def resumetask():  # 恢复
     id = request.args['id']
     scheduler.resume_job(id)
+    state_data[id] = '1'
+    print(state_data)
     return "Success!"
 
 
@@ -27,14 +32,18 @@ def resumetask():  # 恢复
 def get_task():
     jobs = scheduler.get_jobs()
     joblist = []
+    print(jobs)
     for job in jobs:
+        if (state_data.get(job.id) == None):
+            state_data[job.id] = '1'
         item = {
             "id": job.id,
             "name": job.name,
+            "state":state_data[job.id]
         }
         joblist.append(item)
-
-    return str(joblist)
+    print(state_data)
+    return jsonify(joblist)
 
 
 # @kctool.route('/scheduler/remove')

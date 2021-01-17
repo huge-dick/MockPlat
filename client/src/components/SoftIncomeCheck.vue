@@ -3,6 +3,7 @@
     <div>
       <DatePicker type="date" @on-change="changeTime" format="yyyy-MM-dd" :options=dateOptions placeholder="选择需要检测的日期" style="width: 200px"></DatePicker>
       <Button id="startCheck" type="primary" @click="async_check">开始检测</Button>
+      <Timing :incomeType="incomeType"></Timing>
     </div>
     <div id="income_check_list">
       <div id="softincome">
@@ -32,9 +33,13 @@
   import {
     apiSoftIncomeCheck, apiSoftLowerCheck
   } from "../request/api";
+  import Timing from './common/Timing.vue'
 
     export default {
         name: "SoftIncomeCheck",
+        components:{
+          'Timing': Timing
+        },
         data(){
             return{
               percent1:0,
@@ -79,7 +84,9 @@
                         ]
 
 
-              }
+              },
+              incomeType:"SoftIncomeCheck",
+              checkDate:null
             }
         },
         methods:{
@@ -87,7 +94,10 @@
             this.checkDate=e
           },
           async_check(){
-
+            if (this.checkDate === null){
+              this.$Message.info('请填写需要检测的日期！')
+              return
+            }
             apiSoftIncomeCheck({date:this.checkDate}).then(res => {
                 if (res.code === 200){
                   if(res.result=="success"){

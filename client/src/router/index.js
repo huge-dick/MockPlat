@@ -8,6 +8,8 @@ import IncomeCheck from '../components/IncomeCheck'
 import SoftIncomeCheck from '../components/SoftIncomeCheck'
 import Sharding from '../components/Sharding'
 import ClearCache from '../components/ClearCache'
+import InterfaceTest from '../components/InterfaceTest'
+import TaskList from '../components/TaskList'
 
 Vue.use(Router);
 
@@ -56,6 +58,16 @@ export default new Router({
       path:'/sharding',
       name:'Sharding',
       component: Sharding
+    },
+    {
+      path:'/interfaceTest',
+      name:'InterfaceTest',
+      component: InterfaceTest
+    },
+    {
+      path:'/task_list',
+      name:'TaskList',
+      component: TaskList
     }
   ],
   mode: 'history',
