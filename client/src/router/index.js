@@ -10,6 +10,7 @@ import Sharding from '../components/Sharding'
 import ClearCache from '../components/ClearCache'
 import InterfaceTest from '../components/InterfaceTest'
 import TaskList from '../components/TaskList'
+import InterfaceReport from '../components/InterfaceReport'
 
 Vue.use(Router);
 
@@ -68,6 +69,11 @@ export default new Router({
       path:'/task_list',
       name:'TaskList',
       component: TaskList
+    },
+    {
+      path:'/interfaceReport',
+      name:'InterfaceReport',
+      component: InterfaceReport
     }
   ],
   mode: 'history',

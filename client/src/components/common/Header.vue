@@ -41,11 +41,12 @@
         </Submenu>
         <Submenu name="4">
             <template slot="title">
-                <Icon type="ios-stats" />
+              <Icon type="ios-pie" />
                 接口测试
             </template>
             <MenuGroup title="接口测试">
                 <MenuItem name="4-1" to="/interfaceTest">接口测试</MenuItem>
+                <MenuItem name="4-2" to="/interfaceReport">接口测试报告</MenuItem>
             </MenuGroup>
         </Submenu>
         <MenuItem name="5">

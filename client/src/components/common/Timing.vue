@@ -38,7 +38,7 @@ export default {
               if (this.timingFlag === '1') {
                   // alert('启动状态')
                   this.timing = '停止定时检测'
-                  this.msg = '已开启定时任务，将在每日17：00：00检测'
+                  this.msg = '已开启定时任务，将在每日18：00：00检测'
                 } else {
                   // alert('关闭状态')
                   this.timing = '启动定时检测'
