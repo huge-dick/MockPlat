@@ -81,10 +81,11 @@ class PoolAccountApi():
     def receipt(self,userId,currency,tokenId):
         path='/inner/nft/receipt'
         bizNo = round(datetime.datetime.now().timestamp() * 1000000)
+
         data={
-              "biz_from": "string",
-              "biz_type": "string",
-              "biz_no": "bizNo",
+              "biz_from": "PAYMENT",
+              "biz_type": "DEPOSIT",
+              "biz_no": str(bizNo),
               "user_id": userId,
               "currency": currency,
               "token_id": tokenId,
@@ -105,5 +106,5 @@ if __name__ == '__main__':
     # rs = accountFrontApi.sharding_account('insertdirec1597061619285')
     # print(rs)
     poolAccountApi=PoolAccountApi()
-    rs=poolAccountApi.receipt(userId='insertdirec1597053032747',currency='VELO_X',tokenId='2')
+    rs=poolAccountApi.receipt(userId='5fe07e0c2ce6cf0009daf552',currency='GEGO_V2',tokenId='80008')
     print(rs)
